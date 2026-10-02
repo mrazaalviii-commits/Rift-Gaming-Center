@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIFT Gaming Centre | Ladhana</title>
+<meta name="description" content="RIFT Gaming Centre in Ladhana — gaming, tournaments, deals and bookings. Rs. 300/hour.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+:root{--bg:#070912;--card:#101522;--line:#20283a;--text:#f6f7fb;--muted:#a8b0c0;--accent:#6cf6ff;--accent2:#b66cff;}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 15% 10%,#15204a 0,transparent 30%),radial-gradient(circle at 85% 20%,#32134d 0,transparent 25%),var(--bg);color:var(--text);font-family:Poppins,sans-serif}
+a{color:inherit;text-decoration:none} .wrap{max-width:1180px;margin:auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,9,18,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between} .logo{font:800 24px Orbitron;letter-spacing:2px} .logo b{color:var(--accent)} .links{display:flex;gap:22px;font-size:14px;color:#d9deea} .links a:hover{color:var(--accent)}
+.hero{min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden} .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,18,.98),rgba(7,9,18,.66),rgba(7,9,18,.15)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=85') center/cover;z-index:-1}
+.badge{display:inline-block;padding:8px 13px;border:1px solid #3e506e;border-radius:999px;color:var(--accent);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:#0c1322}
+h1{font:800 clamp(45px,8vw,92px)/.95 Orbitron;margin:20px 0 18px;letter-spacing:-3px} h1 span{color:var(--accent)} .hero p{max-width:650px;color:#c4cad6;font-size:18px;line-height:1.7}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px} .btn{padding:13px 20px;border-radius:12px;border:1px solid #34415b;font-weight:700} .primary{background:linear-gradient(135deg,var(--accent),#4bb5ff);color:#061018;border:0} .secondary{background:#0e1422}
+section{padding:80px 0} .eyebrow{color:var(--accent);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700} h2{font:700 clamp(30px,4vw,48px) Orbitron;margin:10px 0 35px}
+.games{display:grid;grid-template-columns:repeat(4,1fr);gap:18px} .game-card{background:linear-gradient(180deg,#141b2a,#0d111c);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s;box-shadow:0 15px 40px #0004} .game-card:hover{transform:translateY(-6px);border-color:#3d6680} .game-card img{width:100%;height:150px;object-fit:cover;display:block} .game-info{padding:16px} .game-info span{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:1.3px} .game-info h3{margin:7px 0;font-size:18px} .game-info p{margin:0;color:var(--muted);font-size:12px}
+.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .deal{padding:28px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,#121a2a,#0b0f19);position:relative;overflow:hidden} .deal.featured{border-color:var(--accent)} .deal h3{font:700 22px Orbitron} .price{font-size:38px;font-weight:800;margin:18px 0} .deal p{color:var(--muted);line-height:1.7} .deal ul{padding-left:18px;color:#dce1eb;line-height:2}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px} .panel{padding:30px;border:1px solid var(--line);border-radius:20px;background:#0e1420} .panel h3{font:700 20px Orbitron} .panel p{color:var(--muted);line-height:1.8} .contact{font-size:18px;margin:10px 0}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-align:center;font-size:13px}
+@media(max-width:900px){.games{grid-template-columns:repeat(2,1fr)} .deals{grid-template-columns:1fr}}
+@media(max-width:600px){.links{display:none} .hero{min-height:590px} .hero p{font-size:15px} .games{grid-template-columns:1fr 1fr;gap:12px} .game-card img{height:120px} .game-info{padding:12px} .game-info h3{font-size:14px} .info-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav"><a class="logo" href="#">RIFT <b>GC</b></a><div class="links"><a href="#games">Games</a><a href="#deals">Deals</a><a href="#contact">Contact</a></div></div></nav>
+<header class="hero"><div class="wrap"><span class="badge">Ladhana • Gaming Centre</span><h1>PLAY<br><span>WITHOUT LIMITS.</span></h1><p>Level up your gaming experience at RIFT Gaming Centre. Premium PC & console gaming, competitive sessions and great deals — all at <b>Rs. 300/hour</b>.</p><div class="btns"><a class="btn primary" href="https://wa.me/923367901016?text=Hi%20RIFT%20Gaming%20Centre%2C%20I%20want%20to%20book%20a%20gaming%20session.">📲 Book on WhatsApp</a><a class="btn secondary" href="#games">🎮 Explore Games</a></div></div></header>
+
+<section id="games"><div class="wrap"><div class="eyebrow">Game Zone</div><h2>Choose Your Game</h2><div class="games"><article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg" alt="GTA V cover" loading="lazy">
+      <div class="game-info"><span>Open World</span><h3>GTA V</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://placehold.co/900x500/0b0d14/ffffff?text=GTA+VI" alt="GTA VI cover" loading="lazy">
+      <div class="game-info"><span>Coming Soon</span><h3>GTA VI</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1778820/header.jpg" alt="TEKKEN 8 cover" loading="lazy">
+      <div class="game-info"><span>Fighting</span><h3>TEKKEN 8</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg" alt="God of War cover" loading="lazy">
+      <div class="game-info"><span>Action</span><h3>God of War</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1817070/header.jpg" alt="Spider-Man Remastered cover" loading="lazy">
+      <div class="game-info"><span>Action</span><h3>Spider-Man Remastered</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/2195250/header.jpg" alt="EA SPORTS FC 24 cover" loading="lazy">
+      <div class="game-info"><span>Sports</span><h3>EA SPORTS FC 24</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg" alt="Red Dead Redemption 2 cover" loading="lazy">
+      <div class="game-info"><span>Open World</span><h3>Red Dead Redemption 2</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077 cover" loading="lazy">
+      <div class="game-info"><span>RPG</span><h3>Cyberpunk 2077</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg" alt="Forza Horizon 5 cover" loading="lazy">
+      <div class="game-info"><span>Racing</span><h3>Forza Horizon 5</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1971870/header.jpg" alt="Mortal Kombat 1 cover" loading="lazy">
+      <div class="game-info"><span>Fighting</span><h3>Mortal Kombat 1</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1364780/header.jpg" alt="Street Fighter 6 cover" loading="lazy">
+      <div class="game-info"><span>Fighting</span><h3>Street Fighter 6</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article>
+<article class="game-card">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/2315690/header.jpg" alt="WWE 2K24 cover" loading="lazy">
+      <div class="game-info"><span>Sports</span><h3>WWE 2K24</h3><p>Available at RIFT Gaming Centre</p></div>
+    </article></div></div></section>
+
+<section id="deals"><div class="wrap"><div class="eyebrow">RIFT Offers</div><h2>Gaming Deals</h2><div class="deals">
+<div class="deal"><span class="eyebrow">Starter</span><h3>1 Hour</h3><div class="price">Rs. 300</div><p>Perfect for a quick gaming session.</p><ul><li>1 hour gaming</li><li>PC / Console</li><li>All available games</li></ul></div>
+<div class="deal featured"><span class="eyebrow">Popular</span><h3>3 Hours</h3><div class="price">Rs. 800</div><p>Play longer and save Rs. 100.</p><ul><li>3 hours gaming</li><li>PC / Console</li><li>Priority booking</li></ul><a class="btn primary" href="https://wa.me/923367901016?text=Hi%20RIFT%2C%20I%20want%20the%203-hour%20deal.">Book Deal</a></div>
+<div class="deal"><span class="eyebrow">Squad</span><h3>5 Hours</h3><div class="price">Rs. 1,250</div><p>For serious gaming sessions.</p><ul><li>5 hours gaming</li><li>PC / Console</li><li>Save Rs. 250</li></ul></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap"><div class="eyebrow">Find RIFT</div><h2>Come & Play</h2><div class="info-grid">
+<div class="panel"><h3>📍 Location</h3><p class="contact"><b>Ladhana</b></p><p>Drop in and enjoy your favourite games at RIFT Gaming Centre.</p></div>
+<div class="panel"><h3>📞 Contact</h3><p class="contact"><b>0336 7901016</b></p><p><a href="mailto:mrazaalviii@gmail.com">mrazaalviii@gmail.com</a></p><div class="btns"><a class="btn primary" href="https://wa.me/923367901016?text=Hi%20RIFT%20Gaming%20Centre%2C%20I%20want%20to%20book.">WhatsApp Us</a><a class="btn secondary" href="mailto:mrazaalviii@gmail.com">Email Us</a></div></div>
+</div></div></section>
+<footer><div class="wrap">© 2026 RIFT Gaming Centre • Ladhana • Rs. 300/hour</div></footer>
+</body></html>
