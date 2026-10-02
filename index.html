@@ -176,13 +176,21 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-a
     
 <div class="payment-section">
   <div class="payment-title">💳 Payment Method</div>
-  <div class="payment-card">
+  <div class="duration-options" id="payMethods">
+    <button type="button" class="duration-option active" data-pay="jazz">JazzCash (online)</button>
+    <button type="button" class="duration-option" data-pay="shop">Pay at shop</button>
+  </div>
+  <div class="payment-card" id="jazzBox">
     <div><strong>JazzCash</strong></div>
     <div class="payment-number">03367901016</div>
     <div class="payment-holder">Account Title: Muhammad Raza</div>
     <div class="payment-note">Please send the booking amount to this JazzCash account, then upload your payment screenshot below.</div>
   </div>
-  <div>
+  <div id="shopBox" class="payment-card" style="display:none">
+    <div><strong>Pay at shop</strong></div>
+    <div class="payment-note">No online payment needed. Pay the full amount in cash when you arrive at RIFT Gaming Centre.</div>
+  </div>
+  <div id="shotWrap">
     <label for="paymentScreenshot">Payment Screenshot</label>
     <input id="paymentScreenshot" type="file" accept="image/*">
     <small class="file-note">Screenshot will be included with your booking details for verification.</small>
@@ -231,6 +239,18 @@ document.querySelectorAll(".duration-option").forEach(function(btn){
 document.getElementById("bookingModal").addEventListener("click", function(e){
   if(e.target === this) closeBooking();
 });
+let payMethod = "jazz";
+document.querySelectorAll("#payMethods .duration-option").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    document.querySelectorAll("#payMethods .duration-option").forEach(function(x){ x.classList.remove("active"); });
+    btn.classList.add("active");
+    payMethod = btn.dataset.pay;
+    const online = payMethod === "jazz";
+    document.getElementById("jazzBox").style.display = online ? "block" : "none";
+    document.getElementById("shopBox").style.display = online ? "none" : "block";
+    document.getElementById("shotWrap").style.display = online ? "block" : "none";
+  });
+});
 function confirmBooking(){
   const date = document.getElementById("bookingDate").value;
   const time = document.getElementById("bookingTime").value;
@@ -242,12 +262,12 @@ function confirmBooking(){
     alert("Please fill in all booking details.");
     return;
   }
-  if(!screenshot || !screenshot.files.length){
+  if(payMethod === "jazz" && (!screenshot || !screenshot.files.length)){
     alert("Please upload your JazzCash payment screenshot before confirming the booking.");
     return;
   }
 
-  const fileName = screenshot.files[0].name;
+  const fileName = (payMethod === "jazz" && screenshot.files.length) ? screenshot.files[0].name : "";
   const message =
     "Hello RIFT Gaming Centre!%0A%0A" +
     "🎮 Game: " + encodeURIComponent(selectedGame) + "%0A" +
@@ -256,12 +276,17 @@ function confirmBooking(){
     "📅 Date: " + encodeURIComponent(date) + "%0A" +
     "🕐 Starting Time: " + encodeURIComponent(time) + "%0A" +
     "⏱️ Duration: " + selectedHours + " Hour" + (selectedHours > 1 ? "s" : "") + "%0A" +
-    "💳 Payment: JazzCash%0A" +
-    "💰 Total: Rs. " + selectedPrice.toLocaleString() + "%0A" +
-    "🧾 Screenshot: " + encodeURIComponent(fileName) + "%0A%0A" +
-    "I have made the JazzCash payment. I will attach the payment screenshot in this WhatsApp chat.";
+    "💳 Payment: " + (payMethod === "shop" ? "Pay at shop" : "JazzCash") + "%0A" +
+    "💰 Total: Rs. " + selectedPrice.toLocaleString() +
+    (payMethod === "jazz" ? "%0A🧾 Screenshot: " + encodeURIComponent(fileName) : "") +
+    "%0A%0A" +
+    (payMethod === "shop"
+      ? "I will pay the full amount at the shop."
+      : "I have made the JazzCash payment. I will attach the payment screenshot in this WhatsApp chat.");
 
-  alert("Your WhatsApp chat will open now. Please attach the same payment screenshot in WhatsApp as proof, then send the booking message.");
+  alert(payMethod === "shop"
+    ? "Your WhatsApp chat will open now. Send the booking message."
+    : "Your WhatsApp chat will open now. Please attach the same payment screenshot in WhatsApp as proof, then send the booking message.");
   window.open("https://wa.me/923367901016?text=" + message, "_blank");
 }
 </script>
